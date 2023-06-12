@@ -636,7 +636,7 @@ void createDepthBuffer()
 		imageMemoryBarrier.dstAccessMask = VK_ACCESS_DEPTH_STENCIL_ATTACHMENT_READ_BIT | VK_ACCESS_DEPTH_STENCIL_ATTACHMENT_WRITE_BIT;
 		imageMemoryBarrier.oldLayout = VK_IMAGE_LAYOUT_UNDEFINED;
 		imageMemoryBarrier.newLayout = VK_IMAGE_LAYOUT_DEPTH_STENCIL_ATTACHMENT_OPTIMAL;
-		imageMemoryBarrier.image = depthImageView;
+		imageMemoryBarrier.image = depthImage;
 		imageMemoryBarrier.subresourceRange = view.subresourceRange;
 
 		VkCommandBufferBeginInfo beginInfo = {};

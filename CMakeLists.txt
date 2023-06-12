@@ -39,12 +39,3 @@ endif()
 add_custom_target(uninstall 
     "${CMAKE_COMMAND}" -P "${CMAKE_SOURCE_DIR}/cmake/uninstall.cmake"
 )
-
-add_custom_target(uninstall-vulkan
-    "${CMAKE_COMMAND}" -P "${CMAKE_BINARY_DIR}/vulkan-headers-prefix/src/vulkan-headers-build/cmake_uninstall.cmake"
-)
-
-add_custom_target(clean-vulkan
-    "${CMAKE_COMMAND}" -E remove_directory "${CMAKE_BINARY_DIR}/vulkan-headers-prefix"
-    "${CMAKE_COMMAND}" -E remove_directory "${CMAKE_BINARY_DIR}/vulkan-loader-prefix"
-)

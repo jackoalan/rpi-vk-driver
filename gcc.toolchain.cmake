@@ -68,5 +68,4 @@ set(EXTERNAL_SYSROOT ${CMAKE_SOURCE_DIR}/external)
 
 link_directories(
     ${EXTERNAL_SYSROOT}/lib
-    ${CMAKE_BINARY_DIR}/vulkan-loader-prefix/src/vulkan-loader-build/loader
     )

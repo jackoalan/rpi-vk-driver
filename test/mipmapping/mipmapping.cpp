@@ -1170,12 +1170,13 @@ void CreateShaders()
 	spirv[1] = 0x00010000;
 	spirv[2] = 0x14E45250;
 	spirv[3] = 1;
-	spirv[4] = (uint32_t)&shaderModuleCreateInfo;
+	spirv[4] = 0;
 	//words start here
 	spirv[5] = 1 << 16;
 
 	VkShaderModuleCreateInfo smci = {};
 	smci.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
+	smci.pNext = &shaderModuleCreateInfo;
 	smci.codeSize = sizeof(uint32_t)*6;
 	smci.pCode = spirv;
 	vkCreateShaderModule(device, &smci, 0, &sampleShaderModule);

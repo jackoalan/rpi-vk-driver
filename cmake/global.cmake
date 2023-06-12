@@ -24,7 +24,6 @@ endif()
 
 link_directories(
     ${EXTERNAL_SYSROOT}/lib
-    ${CMAKE_BINARY_DIR}/vulkan-loader-prefix/src/vulkan-loader-build/loader
 )
 
 set(CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib)

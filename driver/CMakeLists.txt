@@ -12,17 +12,3 @@ install(TARGETS rpi-vk-driver LIBRARY DESTINATION lib)
 
 configure_file(rpi-vk-driver.json.in ${CMAKE_BINARY_DIR}/rpi-vk-driver.json @ONLY)
 install(FILES ${CMAKE_BINARY_DIR}/rpi-vk-driver.json DESTINATION share/vulkan/icd.d)
-
-if(NOT CMAKE_CROSSCOMPILING)
-    # prevents sudo make
-    install(FILES
-        ${CMAKE_BINARY_DIR}/vulkan-loader-prefix/src/vulkan-loader-build/loader/libvulkan.so
-        ${CMAKE_BINARY_DIR}/vulkan-loader-prefix/src/vulkan-loader-build/loader/libvulkan.so.1
-        ${CMAKE_BINARY_DIR}/vulkan-loader-prefix/src/vulkan-loader-build/loader/libvulkan.so.${VULKAN_VERSION}
-        DESTINATION lib
-    )
-    install(FILES
-        ${CMAKE_BINARY_DIR}/vulkan-loader-prefix/src/vulkan-loader-build/loader/vulkan.pc
-        DESTINATION lib/pkgconfig
-    )
-endif()

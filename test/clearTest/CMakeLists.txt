@@ -6,6 +6,6 @@ file(GLOB testSrc
 add_executable(clearTest ${testSrc} )
 
 target_link_libraries(clearTest vulkan $<TARGET_OBJECTS:QPUassembler>)
-add_dependencies(clearTest vulkan-loader QPUassembler)
+add_dependencies(clearTest QPUassembler)
 
 add_testcase(clearTest)

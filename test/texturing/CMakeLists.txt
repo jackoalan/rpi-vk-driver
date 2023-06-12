@@ -6,6 +6,6 @@ file(GLOB testSrc
 add_executable(texturing ${testSrc} )
 
 target_link_libraries(texturing vulkan $<TARGET_OBJECTS:QPUassembler>)
-add_dependencies(texturing vulkan-loader QPUassembler)
+add_dependencies(texturing QPUassembler)
 
 add_testcase(texturing)

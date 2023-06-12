@@ -6,6 +6,6 @@ file(GLOB testSrc
 add_executable(triangle ${testSrc} )
 
 target_link_libraries(triangle vulkan $<TARGET_OBJECTS:QPUassembler>)
-add_dependencies(triangle vulkan-loader QPUassembler)
+add_dependencies(triangle QPUassembler)
 
 add_testcase(triangle)

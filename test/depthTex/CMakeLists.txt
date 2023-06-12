@@ -6,6 +6,6 @@ file(GLOB testSrc
 add_executable(depthTex ${testSrc} )
 
 target_link_libraries(depthTex vulkan $<TARGET_OBJECTS:QPUassembler>)
-add_dependencies(depthTex vulkan-loader QPUassembler)
+add_dependencies(depthTex QPUassembler)
 
 add_testcase(depthTex)

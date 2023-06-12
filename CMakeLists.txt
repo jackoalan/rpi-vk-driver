@@ -22,7 +22,7 @@ project (rpi-vulkan-driver
 include(options)
 include(sysroot)
 include(global)
-include(vulkan)
+#include(vulkan)
 
 add_subdirectory(brcm)
 add_subdirectory(QPUassembler)

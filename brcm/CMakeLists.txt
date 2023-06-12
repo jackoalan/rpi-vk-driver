@@ -9,18 +9,18 @@ file(GLOB brcmSrc
 	"qpu/*.c"
 )
 
-find_program(python REQUIRED)
+#find_program(python3 REQUIRED)
 
 add_custom_command(
   OUTPUT cle/v3d_packet_v21_pack.h
-  COMMAND python cle/gen_pack_header.py cle/v3d_packet_v21.xml 21 > cle/v3d_packet_v21_pack.h
+  COMMAND python3 cle/gen_pack_header.py cle/v3d_packet_v21.xml 21 > cle/v3d_packet_v21_pack.h
   DEPENDS cle/gen_pack_header.py cle/v3d_packet_v21.xml
   WORKING_DIR ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 add_custom_command(
   OUTPUT cle/v3d_xml.h
-  COMMAND python /cle/gen_zipped_file.py cle/v3d_packet_v21.xml > cle/v3d_xml.h
+  COMMAND python3 /cle/gen_zipped_file.py cle/v3d_packet_v21.xml > cle/v3d_xml.h
   DEPENDS /cle/gen_zipped_file.py cle/v3d_packet_v21.xml
   WORKING_DIR ${CMAKE_CURRENT_SOURCE_DIR}
 )

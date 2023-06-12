@@ -6,6 +6,8 @@
 #include <pthread.h>
 #include <semaphore.h>
 
+modeset_saved_state modeset_saved_states[32];
+
 typedef struct vsyncData
 {
 	_image* i;

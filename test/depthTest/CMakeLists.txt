@@ -6,6 +6,6 @@ file(GLOB testSrc
 add_executable(depthTest ${testSrc} )
 
 target_link_libraries(depthTest vulkan $<TARGET_OBJECTS:QPUassembler>)
-add_dependencies(depthTest vulkan-loader QPUassembler)
+add_dependencies(depthTest depthTest QPUassembler)
 
 add_testcase(depthTest)
